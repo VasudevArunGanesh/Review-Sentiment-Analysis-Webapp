@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='styles/main.css')}}">
+</head>
+<body style="background-color: rgb(49, 49, 49);">
+    <div class="main">
+        <div class="heading">
+            <h1>SENTIMENT ANALYSIS</h1>
+        </div>
+        <div class="inpt">
+            <form method="POST" class = "form">
+                <input type="text" name="inp" placeholder="Enter text" id="ipt"><br>
+                <input type="submit" name="submit" id="btn">
+            </form>
+        </div>
+        <div class="output">
+            <h3>the message signifies a {{message}} sentiment</h1>
+        </div>
+    </div>
+</body>
+</html>

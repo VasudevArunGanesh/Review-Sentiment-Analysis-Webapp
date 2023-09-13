@@ -1,0 +1,64 @@
+.main {
+    display: inline;
+}
+
+.heading {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    display: block;
+    text-align: center;
+}
+
+.inpt {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    height: 200px;
+    width: 500px;
+    border: 2px solid rgb(206, 206, 206);
+    border-radius: 10px;
+}
+
+
+#ipt {
+    width: 250px;
+    border: 2px solid rgb(146, 146, 251);
+    border-radius: 10px;
+    height: 30px;
+    display: block;
+    margin: auto;
+    margin-top: 50px;
+    padding-left: 10px;
+}
+
+#btn {
+    background-color: rgb(113, 113, 113);
+    display: block;
+    margin: auto;
+    border: 0px;
+    height: 35px;
+    width: 70px;
+    border-radius: 5px;
+    font-size: large;
+    color: white;
+}
+
+.output {
+    margin-top: 40px;
+    display: block;
+    text-align: center;
+    font-size: large;
+}
+
+h1 {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    background-color: rgb(93, 93, 93);
+    padding: 10px;
+    color: white;
+}
+
+h3 {
+    font-family: sans-serif;
+    color: white;
+}
