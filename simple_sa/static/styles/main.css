@@ -49,13 +49,14 @@
     display: block;
     text-align: center;
     font-size: large;
+    color: white;
+
 }
 
 h1 {
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     background-color: rgb(93, 93, 93);
     padding: 10px;
-    color: white;
 }
 
 h3 {
