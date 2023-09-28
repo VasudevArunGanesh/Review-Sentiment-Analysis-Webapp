@@ -1,0 +1,76 @@
+{% extends 'base.html' %} {% block head %} <title>PRODMATIC</title>{% endblock
+%} {% block body %} {% include 'navbar.html' %}
+<div class="content">
+  {% if reviews|length < 1 %}
+  <h4 style="text-align: center">
+    There are no reviews. Create one <a href="{{ url_for('add_rev')}}">Here</a>!
+  </h4>
+  {% else %}
+  <script>
+    setTimeout(func, 10);
+    setTimeout(func2, 10);
+    function func() {
+      var prod = document.getElementsByTagName("p");
+      var len = prod.length;
+      for (var i = 0; i < len; i++) {
+        let rev = prod[i].innerText;
+        let dot = "...";
+        if (rev.length > 40) {
+          rev = rev.slice(0, 35).concat(dot);
+        }
+        prod[i].innerHTML = rev;
+      }
+    }
+    function func2() {
+      var prod = document.getElementsByClassName("prodt_link");
+      var len = prod.length;
+      for (var i = 0; i < len; i++) {
+        let rev = prod[i].innerText;
+        let dot = "...";
+        if (rev.length > 20) {
+          rev = rev.slice(0, 18).concat(dot);
+        }
+        prod[i].innerHTML = rev;
+      }
+    }
+  </script>
+  <table class="tabl">
+    <tr>
+      <th>Product</th>
+      <th>Rating</th>
+      <th>Review</th>
+      <th>Sentiment</th>
+      <th></th>
+    </tr>
+    {% for review in reviews %}
+    <tr class="item-rows">
+      <td>
+        <a class="prodt_link" href="{{review.link}}" target="_blank"
+          >{{ review.name }}</a
+        >
+      </td>
+      <td>{{ review.rating }}</td>
+      <td><p class="revu">{{ review.rev }}</p></td>
+      <td>{{ review.semantic }}</td>
+      <td>
+        <a
+          class="prod_link"
+          href="/view/{{review.id}}"
+          style="color: rgb(0, 255, 0)"
+          >View</a
+        >
+        <br />
+
+        <a
+          class="prod_link"
+          href="/delete/{{review.id}}"
+          style="color: rgb(255, 95, 95)"
+          >Delete</a
+        >
+      </td>
+    </tr>
+    {% endfor %}
+  </table>
+  {% endif %}
+</div>
+{% endblock %}

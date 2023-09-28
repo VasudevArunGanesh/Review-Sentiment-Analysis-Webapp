@@ -1,0 +1,135 @@
+{% extends 'base.html' %} {% block head %}<title>PRODMATIC</title>
+
+{% endblock %} {% block body %} {% include 'navbar2.html' %}
+
+<body>
+  <script>
+    setTimeout(myFunc, 1000);
+    function myFunc() {
+      document.getElementById("btn").click();
+    }
+  </script>
+  <div class="main">
+    <div class="heading">
+      <h1>SENTIMENT ANALYSIS</h1>
+    </div>
+    <div class="inpt">
+      <form method="POST" class="form">
+        <input
+          type="text"
+          id="ipt"
+          name="name"
+          placeholder="Enter Product Name"
+        />
+
+        <input
+          type="text"
+          name="inp"
+          placeholder="Enter Review"
+          id="ipt"
+          required
+        />
+        <div class="slider">
+          <label for="rate">Give a rating</label>
+          <input
+            type="range"
+            name="rate"
+            id="ipt2"
+            min="0"
+            max="5"
+            value="0"
+            oninput="rangeValue.innerText = this.value"
+          />
+          <span id="rangeValue">0</span>
+        </div>
+
+        <input type="text" name="link" id="ipt" placeholder="Product Link" />
+        <button
+          type="submit"
+          name="submit"
+          id="btn"
+          onclick="myFunc()"
+          data-bs-toggle="modal"
+          data-bs-target="#exampleModal"
+        >
+          submit
+        </button>
+      </form>
+    </div>
+    <div class="output">
+      {% if sentiment %}
+      <div
+        class="modal fade"
+        id="exampleModal"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">
+                Analysis Result:
+              </h1>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <p><b>Product name:</b> {{name}}</p>
+              <p><b>Product review: </b>{{input}}</p>
+              <p><b>Product rating:</b> {{rate}}</p>
+              <p><b>Sentiment Polarity:</b> {{ sentiment.polarity }}</p>
+              <div style="display: flex; justify-content: center">
+                &#128542;
+                <div style="width: 210px"></div>
+                &#128528;
+                <div style="width: 210px"></div>
+                &#128512;
+              </div>
+              <br />
+              <meter
+                value="{{ sentiment_score }}"
+                min="-1"
+                max="1"
+                style="width: 450px; height: 20px"
+              ></meter>
+              <p>Sentiment Subjectivity: {{ sentiment.subjectivity }}</p>
+              <h3>This review signifies a {{message}} sentiment</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- <h2>Analysis Result:</h2>
+      <p><b>Product name:</b> {{name}}</p>
+      <p><b>Product review: </b>{{input}}</p>
+      <p><b>Product rating:</b> {{rate}}</p>
+      <p><b>Sentiment Polarity:</b> {{ sentiment.polarity }}</p>
+      <div style="display: flex; justify-content: center">
+        &#128542;
+        <div style="width: 210px"></div>
+        &#128528;
+        <div style="width: 210px"></div>
+        &#128512;
+      </div>
+      <br />
+      <meter
+        value="{{ sentiment_score }}"
+        min="-1"
+        max="1"
+        style="width: 500px; height: 20px"
+      ></meter>
+      <p>Sentiment Subjectivity: {{ sentiment.subjectivity }}</p>
+      <h3>This review signifies a {{message}} sentiment</h3> -->
+
+      <!-- <h3>the message signifies a {{message}} sentiment</h1> -->
+
+      {% endif %}
+    </div>
+  </div>
+  {% endblock %}
+</body>

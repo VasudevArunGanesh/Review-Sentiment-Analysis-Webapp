@@ -1,0 +1,31 @@
+{% extends 'base.html' %} {% block head %} <title>PRODMATIC</title>{% endblock
+%} {% block body %} {% include 'navbar2.html' %}
+<div class="output">
+  {% for review in review %}
+  <h2>Analysis Result:</h2>
+  <p>
+    Product name:
+    <a class="prod_link" href="{{review.link}}" target="_blank"
+      >{{review.name }}</a
+    >
+  </p>
+  <p>Product review: {{review.rev}}</p>
+  <p>Product rating: {{review.rating}}</p>
+  <p>Sentiment Polarity: {{ review.semantic }}</p>
+  <div style="display: flex; justify-content: center">
+    &#128542;
+    <div style="width: 210px"></div>
+    &#128528;
+    <div style="width: 210px"></div>
+    &#128512;
+  </div>
+  <br />
+  <meter
+    value="{{ review.semantic }}"
+    min="-1"
+    max="1"
+    style="width: 500px; height: 20px"
+  ></meter>
+  {% endfor %}
+</div>
+{% endblock %}

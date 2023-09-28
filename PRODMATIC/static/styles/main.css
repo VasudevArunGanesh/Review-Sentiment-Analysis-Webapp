@@ -1,0 +1,94 @@
+.main {
+    display: inline;
+}
+
+.heading {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    display: block;
+    text-align: center;
+}
+
+.inpt {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    height: 300px;
+    width: 500px;
+    border: 2px solid rgb(206, 206, 206);
+    border-radius: 10px;
+}
+
+#ipt2{
+    margin-top: 30px;
+}
+#ipt {
+    width: 250px;
+    border: 2px solid rgb(146, 146, 251);
+    border-radius: 10px;
+    height: 30px;
+    display: block;
+    margin: auto;
+    margin-top: 30px;
+    padding-left: 10px;
+}
+
+#btn {
+    background-color: rgb(29, 101, 0);
+    display: block;
+    margin: auto;
+    border: 0px;
+    height: 35px;
+    width: 70px;
+    border-radius: 5px;
+    font-size: large;
+    color: white;
+    margin-top: 20px;
+}
+
+.output {
+    margin-top: 40px;
+    display: block;
+    text-align: center;
+    font-size: large;
+    width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+table,th,tr,td{
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+th{
+    font-family:'Croissant One', cursive;
+}
+
+table{
+    width: 900px;
+    margin-top: 50px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    
+}
+
+.prod_link{
+    text-decoration: none;
+}
+.prodt_link{
+    text-decoration: none;
+}
+tr:nth-child(even){
+    background-color: rgb(195, 195, 195);
+    border-radius: 50%;
+}
+th,td {
+    padding: 5px;
+}
+tr.item-rows:hover{
+    background-color: rgb(251, 255, 228);
+    animation-delay: 1s;
+}
