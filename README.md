@@ -15,7 +15,7 @@ Backend db managed using SQLite (SQLAlchemy) <br>
   </li>
 </ul>
 
-## Output
+## Screencaptures:
 
 <img src="https://i.ibb.co/2ZtwPhj/Screenshot-245.png" alt="Screenshot-245" border="0">
 <img src="https://i.ibb.co/CK3D4dv/Screenshot-246.png" alt="Screenshot-246" border="0">
